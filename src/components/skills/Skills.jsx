@@ -86,6 +86,7 @@ export default function Skills () {
                         </div>
                     </div>
                 ))}
+
             </div>
             <img
                 src="assets/arrow.png"

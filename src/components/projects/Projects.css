@@ -14,9 +14,70 @@
 }
 
 .projects {
-  background-color: green;
+  background-color: #c15bcd;
   display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.projects .projectsTitle {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: -200px;
+  margin-bottom: 100px;
+}
+.projects .projectsTitle h2 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 60px;
+}
+.projects .squares {
+  width: 60%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .projects .squares {
+    flex-flow: column wrap;
+  }
+}
+.projects .squares .square {
+  height: 250px;
+  width: 200px;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #2ad568;
+  border-radius: 50px;
+  box-shadow: 10px 5px 5px 1px #2b2b2b;
+  flex: 0.25;
+}
+@media (max-width: 768px) {
+  .projects .squares .square {
+    height: 200px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+  }
+  .projects .squares .square img {
+    display: none;
+  }
+}
+.projects .squares .square img {
+  height: 150px;
+  width: 150px;
+  margin-top: 5px;
+}
+.projects .squares .square h2 {
+  text-align: center;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=Projects.css.map */
