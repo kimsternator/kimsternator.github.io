@@ -1,0 +1,113 @@
+.next {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+}
+.next img {
+  width: 30px;
+  animation: arrowBlink 2s infinite;
+}
+@keyframes arrowBlink {
+  to {
+    opacity: 0;
+  }
+}
+
+.next {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+}
+.next img {
+  width: 30px;
+  animation: arrowBlink 2s infinite;
+}
+@keyframes arrowBlink {
+  to {
+    opacity: 0;
+  }
+}
+
+.top {
+  background-color: white;
+  color: #063C76;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+.top .wrapper {
+  padding: 10px 30px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.top .wrapper .left {
+  display: flex;
+  align-items: center;
+}
+.top .wrapper .left .logo {
+  font-size: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  margin-right: 40px;
+}
+@media (max-width: 768px) {
+  .top .wrapper .left .logo {
+    font-size: 35px;
+  }
+}
+.top .wrapper .left .itemContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+@media (max-width: 768px) {
+  .top .wrapper .left .itemContainer {
+    display: none;
+  }
+}
+.top .wrapper .left .itemContainer .icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+.top .wrapper .left .itemContainer span {
+  font-size: 15px;
+  font-weight: 500;
+}
+.top .wrapper .right .hamburger {
+  margin-top: 5px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+}
+.top .wrapper .right .hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #063C76;
+  transform-origin: left;
+  transition: all 1s ease;
+}
+.top.active {
+  background-color: #063C76;
+  color: white;
+}
+.top.active .hamburger span:first-child {
+  background-color: white;
+  transform: rotate(45deg);
+}
+.top.active .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.top.active .hamburger span:last-child {
+  background-color: white;
+  transform: rotate(-45deg);
+}
+
+/*# sourceMappingURL=TopBar.css.map */

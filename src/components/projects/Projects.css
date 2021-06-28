@@ -1,0 +1,22 @@
+.next {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+}
+.next img {
+  width: 30px;
+  animation: arrowBlink 2s infinite;
+}
+@keyframes arrowBlink {
+  to {
+    opacity: 0;
+  }
+}
+
+.projects {
+  background-color: green;
+  display: flex;
+  position: relative;
+}
+
+/*# sourceMappingURL=Projects.css.map */

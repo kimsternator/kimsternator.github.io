@@ -1,0 +1,30 @@
+$mainColor: #063C76;
+$skillsColor: #189890;
+$tempColor: #A2CD4D;
+$projectsColor: #EFDAD3;
+$contactColor: #F98F52;
+
+$width: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$width}) {
+    @content
+  }
+}
+
+.next {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+
+  img {
+    width: 30px;
+    animation: arrowBlink 2s infinite;
+  }
+
+  @keyframes arrowBlink {
+    to {
+      opacity: 0;
+    }
+  }
+}
