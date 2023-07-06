@@ -1,0 +1,23 @@
+:root {
+    --font-color: #80c2ce;
+    --background-color: #063C76;
+    --toast-background-color: #edc192;
+    --profile-border-color: orange;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

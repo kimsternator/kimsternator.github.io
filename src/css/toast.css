@@ -1,0 +1,41 @@
+.toast {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: var(--toast-background-color);
+    border-radius: 5px;
+}
+
+.toast span {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--background-color);
+}
+
+#toastMessage {
+    margin-right: 5px;
+}
+
+#snackbar {
+    visibility: hidden;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadeout 0.5s 2.5s;
+    animation: fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
