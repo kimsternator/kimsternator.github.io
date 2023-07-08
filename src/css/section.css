@@ -5,9 +5,9 @@
 
 .section {
     width: 100%;
-    height: 80vh;
     display: flex;
     align-items: center;
+    margin: 20vh 0 20vh 0;
 }
 
 .left {
@@ -19,9 +19,11 @@
 }
 
 .right {
-    display: flex;
-    flex: 0.5 1;
+    display: inherit;
+    flex: 0.6;
     width: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-wrapper {
@@ -87,4 +89,68 @@
 .degree-description {
     font-weight: 500;
     font-size: 20px;
+}
+
+#experience {
+    align-items: flex-start;
+    & .left {
+        position: sticky;
+        top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        flex: 0.5;
+    }
+    & .right {
+        display: flex;
+        flex: 0.5;
+        color: var(--font-color);
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
+}
+
+.job {
+    margin-bottom: 100px;
+    padding: 10px;
+    border-radius: 12px;
+    &:hover {
+        filter: brightness(150%);    
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.job-description {
+    width: 20vw;
+    min-height: 20vh;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: var(--description-background-color);
+    position: relative;
+    & p {
+        visibility: hidden;
+        position: absolute;
+        background-color: transparent;
+    }
+}
+
+.job-tags {
+    margin-top: 10px;
+    display: flex; 
+    flex-direction: row;
+    & span {
+        margin-right: 20px;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 5px;
+        color: var(--background-color);
+        background-color: var(--toast-background-color);
+    }
 }

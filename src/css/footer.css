@@ -6,6 +6,7 @@
     background-color: transparent;
     bottom: 20px;
     left: 20px;
+    z-index: 2;
 }
 
 .footer .footerItem {
@@ -13,7 +14,41 @@
     margin: 5px;
     align-items: center;
     background-color: transparent;
+    &:hover {
+        cursor: pointer;
+    }
     & svg {
         background-color: transparent;
     }
 }
+
+.back {
+    visibility: hidden;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    background-color: transparent;
+    transform: translateX(50%);
+    z-index: 1;
+    animation: fadeinout 4s linear infinite forwards;
+    -webkit-animation: fadeinout 4s linear infinite forwards;
+    & svg {
+        background-color: inherit;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@keyframes fadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@-webkit-keyframes fadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+

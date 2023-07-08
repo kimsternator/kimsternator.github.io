@@ -26,8 +26,10 @@
     display: flex;
     margin-left: 20px;
     justify-content: center;
-    align-content: center;
     align-items: center;
+    &:hover {
+        cursor: pointer;
+    }
     & svg {
         stroke: var(--font-color);
         fill: var(--font-color);
@@ -43,5 +45,27 @@
     fill: var(--background-color);
     & path {
         stroke: var(--font-color);
+    }
+}
+
+#resume {
+    margin-left: auto;
+    margin-right: 200px;
+    & .resume-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        padding: 5px;
+        & span {
+            font-weight: bold;
+            color: var(--toast-background-color);
+            font-size: 25px;
+        }
+        & svg {
+            fill: var(--toast-background-color);
+            margin: 10px;
+        }
     }
 }
