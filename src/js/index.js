@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     // Constants
-    let RESUME_URL = "public/Stephen_Kim_Resume.pdf";
+    const BASE_URL = window.location.href.substring(0, window.location.href.lastIndexOf("/"));
+    const RESUME_URL = "public/Stephen_Kim_Resume.pdf";
 
     // Header Elements
     var emailElement = document.getElementById("email");
@@ -18,8 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     var resumeElement = document.getElementById("resume");
     resumeElement.addEventListener("click", function() {
-        console.log(window.location.href);
-        window.open(window.location.href + RESUME_URL, "_blank");
+        window.open(`${BASE_URL}/${RESUME_URL}`);
     });
 
 
@@ -121,6 +121,100 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     pnaJob.addEventListener("mouseleave", function() {
         setVisibility(pnaDesription, "hidden");
+    });
+
+    // Project Behaviors
+    const totalProjects = 4;
+    let pauseScroll = false;
+    let currentActive = 0;
+    var carouselElements = document.querySelectorAll(".project");
+    var carouselNavigationElement = document.getElementById("carousel-navigation");
+        
+    for (var i = 0; i < totalProjects; i++) {
+        carouselNavigationElement.children.item(i).addEventListener("click", function(event) {
+            var childIndex = Array.prototype.indexOf.call(carouselNavigationElement.children, event.target);
+            setCurrentActive(childIndex);
+        });
+    }
+
+    function setCurrentActive(newCurrentIndex) {
+        if (newCurrentIndex < 0 || newCurrentIndex >= totalProjects) {
+            return;
+        }
+        carouselNavigationElement.children.item(currentActive)?.classList.remove("active");
+        currentActive = newCurrentIndex;
+        carouselNavigationElement.children.item(currentActive).classList.add("active");
+        for (var i = 0; i < carouselElements.length; i++) {
+            carouselElements[i].style.transform = `translateX(-${100 * currentActive}%)`;
+        }
+    }
+
+    function carouselScroll() {
+        if (!pauseScroll) {
+            setCurrentActive(currentActive + 1 < totalProjects ? currentActive + 1 : 0);
+        }
+    }
+
+    setInterval(carouselScroll, 3000);
+
+    var dbElement = document.getElementById("db");
+    var dbTitleElement = document.getElementById("db-title");
+    dbElement.addEventListener("mouseenter", function() {
+        dbTitleElement.classList.add("moveup");
+        pauseScroll = true;
+    });
+    dbElement.addEventListener("mouseleave", function() {
+        dbTitleElement.classList.remove("moveup");
+        pauseScroll = false;
+    });
+    dbElement.addEventListener("click", function() {
+        window.open("https://github.com/kimsternator/Relational-Database", "_blank");
+    });
+
+    var pathElement = document.getElementById("path");
+    var pathTitleElement = document.getElementById("path-title");
+    var pathURL = "pathfinding-visualizer"
+    pathElement.addEventListener("mouseenter", function() {
+        pathTitleElement.classList.add("moveup");
+        pauseScroll = true;
+    });
+    pathElement.addEventListener("mouseleave", function() {
+        pathTitleElement.classList.remove("moveup");
+        pauseScroll = false;
+    });
+    pathElement.addEventListener("click", function() {
+        // window.open(`${BASE_URL}/${sortURL}`, "_blank");
+        window.open(`${"https://kimsternator.github.io"}/${pathURL}`, "_blank");
+    });
+
+    var sortElement = document.getElementById("sort");
+    var sortTitleElement = document.getElementById("sort-title");
+    var sortURL = "sorting-visualizer"
+    sortElement.addEventListener("mouseenter", function() {
+        sortTitleElement.classList.add("moveup");
+        pauseScroll = true;
+    });
+    sortElement.addEventListener("mouseleave", function() {
+        sortTitleElement.classList.remove("moveup");
+        pauseScroll = false;
+    });
+    sortElement.addEventListener("click", function() {
+        // window.open(`${BASE_URL}/${sortURL}`, "_blank");
+        window.open(`${"https://kimsternator.github.io"}/${sortURL}`, "_blank");
+    });
+
+    var mvpElement = document.getElementById("mvp");
+    var mvpTitleElement = document.getElementById("mvp-title");
+    mvpElement.addEventListener("mouseenter", function() {
+        mvpTitleElement.classList.add("moveup");
+        pauseScroll = true;
+    });
+    mvpElement.addEventListener("mouseleave", function() {
+        mvpTitleElement.classList.remove("moveup");
+        pauseScroll = false;
+    });
+    mvpElement.addEventListener("click", function() {
+        window.open("https://github.com/kimsternator/ServiceUp", "_blank");
     });
 
     // Document Behaviors
